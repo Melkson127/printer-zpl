@@ -6,6 +6,23 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-   
+    <input type="file" name="file" id="inpFile">
+    <input type="button" value="Print" id="print">
   </body>
+  <script>
+    const inpFile = document.getElementById('inpFile')
+    const btnPrint = document.querySelector('#print')
+    btnPrint.addEventListener('click', printZpl)
+    function printZpl() {
+      const file = inpFile.files[0]
+      let encoded = false
+      if(file.type != 'text/plain'){
+        encoded = false
+      }else{
+        encoded = true
+      }
+      window.api.execute(file.path, encoded)
+     
+    }
+  </script>
 </html>
