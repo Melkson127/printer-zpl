@@ -1,8 +1,8 @@
 {
   "name": "printer-zpl",
   "productName": "printer-zpl",
-  "version": "1.0.0",
-  "description": "My Electron application description",
+  "version": "0.1.0",
+  "description": "An simple app for print ZPL and EPL files on thermical printers",
   "main": "dist/index.js",
   "scripts": {
     "start": "tsc && electron-forge start",
@@ -19,25 +19,10 @@
       "packagerConfig": {},
       "makers": [
         {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "printer_zpl"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
           "name": "@electron-forge/maker-deb",
           "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
         }
+
       ]
     }
   },

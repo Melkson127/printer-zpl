@@ -4,8 +4,8 @@ exports.__esModule = true;
 // https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
 var child_process_1 = require("child_process");
 var electron_1 = require("electron");
-function execute(path, encoded) {
-    //parse directory if have whitespaces
+function printFile(path, encoded) {
+    //encode directory if have whitespaces
     this.path = path.replace(/ /g, '\\ ');
     (0, child_process_1.exec)("lpr -P L42PRO ".concat(encoded ? '-o raw ' : '', " ").concat(this.path), function (error, stdout, stderr) {
         if (error) {
@@ -14,6 +14,6 @@ function execute(path, encoded) {
     });
 }
 electron_1.contextBridge.exposeInMainWorld('api', {
-    execute: execute
+    printFile: printFile
 });
 //# sourceMappingURL=preload.js.map

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>printer-zpl</title>
+    <link rel="stylesheet" href="../index.css" />
+
+</head>
+<body>
+  <div class="containerPrint">
+    <a href="../index.html" class="back">
+      <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M24 40 8 24 24 8l2.1 2.1-12.4 12.4H40v3H13.7l12.4 12.4Z"/></svg>
+    </a>
+    <label for="inpFile">
+      <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M11 40q-1.2 0-2.1-.9Q8 38.2 8 37v-7.15h3V37h26v-7.15h3V37q0 1.2-.9 2.1-.9.9-2.1.9Zm11.5-7.65V13.8l-6 6-2.15-2.15L24 8l9.65 9.65-2.15 2.15-6-6v18.55Z"/></svg>
+      Select an file to print
+    </label>
+    <br>
+      <input type="file" name="file" id="inpFile">
+      <input type="button" value="Print" id="print">
+  </div>
+    <script>
+        const inpFile = document.getElementById('inpFile')
+        const btnPrint = document.querySelector('#print')
+        btnPrint.addEventListener('click', printZpl)
+        function printZpl() {
+          const file = inpFile.files[0]
+          let encoded = false
+          if(file.type != 'text/plain'){
+            encoded = false
+          }else{
+            encoded = true
+          }
+          window.api.printFile(file.path, encoded)
+         
+        }
+      </script>
+</body>
+</html>
