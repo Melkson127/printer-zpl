@@ -2,7 +2,7 @@
 exports.__esModule = true;
 var electron_1 = require("electron");
 var path = require("path");
-var image = electron_1.nativeImage.createFromPath(__dirname + '/img/print.svg');
+var image = electron_1.nativeImage.createFromPath(__dirname + '/public/img/print.svg');
 image.setTemplateImage(true);
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -25,9 +25,9 @@ var createWindow = function () {
         icon: image
     });
     // and load the index.html of the app.
-    mainWindow.loadFile(path.join(__dirname, '../src/index.html'));
+    mainWindow.loadFile(path.join(__dirname, '../src/public/index.html'));
     // Open the DevTools.
-    //mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
 };
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

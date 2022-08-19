@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background: rgb(29, 28, 28);
+  transition: all 0.5s linear;
 }
 .container{
   position: relative;
@@ -66,4 +67,15 @@ svg path{
 }
 #inpFile{
   display: none;
+}
+label.printer{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  height: 80px;
+  margin-top: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.637);
+  color: white;
+  padding: 5px;
 }

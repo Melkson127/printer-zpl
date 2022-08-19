@@ -1,6 +1,6 @@
 import { app, BrowserWindow, contextBridge, ContextBridge, nativeImage } from 'electron';
 import * as path from 'path';
-const image = nativeImage.createFromPath(__dirname + '/img/print.svg')
+const image = nativeImage.createFromPath(__dirname + '/public/img/print.svg')
 image.setTemplateImage(true)
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -21,14 +21,15 @@ const createWindow = (): void => {
     maxWidth: 500,
     minHeight: 400,
     minWidth: 500,
-    icon: image
+    icon: image,
+    
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, '../src/index.html'));
+  mainWindow.loadFile(path.join(__dirname, '../src/public/index.html'));
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished

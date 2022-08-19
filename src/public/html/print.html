@@ -21,21 +21,6 @@
       <input type="file" name="file" id="inpFile">
       <input type="button" value="Print" id="print">
   </div>
-    <script>
-        const inpFile = document.getElementById('inpFile')
-        const btnPrint = document.querySelector('#print')
-        btnPrint.addEventListener('click', printZpl)
-        function printZpl() {
-          const file = inpFile.files[0]
-          let encoded = false
-          if(file.type != 'text/plain'){
-            encoded = false
-          }else{
-            encoded = true
-          }
-          window.api.printFile(file.path, encoded)
-         
-        }
-      </script>
+    <script src="../js/printFile.js"></script>
 </body>
 </html>

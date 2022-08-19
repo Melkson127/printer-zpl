@@ -22,7 +22,6 @@
           "name": "@electron-forge/maker-deb",
           "config": {}
         }
-
       ]
     }
   },
@@ -41,6 +40,7 @@
   },
   "dependencies": {
     "child_process": "^1.0.2",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "node-printer": "^1.0.4"
   }
 }
