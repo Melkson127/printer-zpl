@@ -15,6 +15,7 @@ const createWindow = (): void => {
     width: 500,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
+      devTools:false
     },
     maximizable: false,
     maxHeight: 400,
@@ -22,14 +23,14 @@ const createWindow = (): void => {
     minHeight: 400,
     minWidth: 500,
     icon: image,
-    
+    autoHideMenuBar: true
   });
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, '../src/public/index.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished

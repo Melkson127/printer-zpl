@@ -43,6 +43,24 @@ body {
   border: none;
   cursor: pointer;
 }
+.containerPrint .option{
+  display: flex;
+  position: relative;
+  width: 400px;
+  height: 80px;
+  border: 1px solid white;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+a{
+  text-decoration: none;
+}
+.containerPrint .option p{
+  width: 100%;
+  text-align: center;
+  color: white;
+}
 .container button{
   width: 80px;
   height: 80px;

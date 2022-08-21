@@ -3,13 +3,19 @@ var btnPrint = document.querySelector('#print');
 btnPrint.addEventListener('click', printZpl);
 function printZpl() {
     var file = inpFile.files[0];
+    var printerName = window.localStorage.getItem('printerName');
     var encoded = false;
-    if (file.type != 'text/plain') {
-        encoded = false;
+    if (printerName != undefined || !printerName) {
+        if (file.type != 'text/plain') {
+            encoded = false;
+        }
+        else {
+            encoded = true;
+        }
+        window.api.printFile(file.path, encoded, printerName);
     }
     else {
-        encoded = true;
+        alert('Printer is not seted, run to settings and select your printer to print files');
     }
-    window.api.printFile(file.path, encoded);
 }
 //# sourceMappingURL=printFile.js.map
