@@ -1,5 +1,6 @@
 # printer-zpl
-An interface for print zpl, epl and others encoded files on linux and unix like system whithout need to use command line, based on lp commands.
+An app for print zpl, epl and others encoded files on linux and unix like system whithout need to use command line, based on lp commands developed with electronjs.
+This software is thought for sellers of ecommerce and marketplaces print labels for shippings using linux an alternative for automatization using open soucer software
 
 # Getting started
 run into your terminal
