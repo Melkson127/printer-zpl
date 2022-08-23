@@ -20,19 +20,21 @@ function getPrinters(){
             inp.name = 'printer'
             printer.addEventListener('click',save)
             inp.value = printerName[i]
-            if(printerSelected != undefined && printerName[i]== printerSelected){
-                inp.checked = true
-                console.log('sla')
-            }
             printer.appendChild(inp)
             printer.htmlFor = `printer${i}`
             printer.className = 'printer'
             print = print.replace(/\n/,'<br>')
             printer.innerHTML += print
             printers.insertAdjacentElement('afterbegin',printer)
-            
-        
         })
+        const labelPrint = document.querySelectorAll('.printer')
+        labelPrint.forEach(el=>{
+            let inp = el.querySelector('input')
+            if(inp.value == printerSelected){
+                inp.checked = true
+            }
+        })
+        
     })
     
 }

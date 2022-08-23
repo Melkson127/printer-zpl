@@ -1,13 +1,12 @@
 import { app, BrowserWindow, contextBridge, ContextBridge, nativeImage } from 'electron';
 import * as path from 'path';
-const image = nativeImage.createFromPath(__dirname + '/public/img/print.svg')
+const image = nativeImage.createFromPath(path.join(__dirname,'../src/public/img/print.png'))
 image.setTemplateImage(true)
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   // eslint-disable-line global-require
   app.quit();
 }
-
 const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -15,7 +14,7 @@ const createWindow = (): void => {
     width: 500,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      devTools:false
+      //devTools:false
     },
     maximizable: false,
     maxHeight: 400,
@@ -30,7 +29,7 @@ const createWindow = (): void => {
   mainWindow.loadFile(path.join(__dirname, '../src/public/index.html'));
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished

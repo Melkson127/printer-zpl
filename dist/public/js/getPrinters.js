@@ -20,16 +20,15 @@ function getPrinters() {
             inp.name = 'printer';
             printer.addEventListener('click', save);
             inp.value = printerName[i];
-            if (printerSelected != undefined && printerName[i] == printerSelected) {
-                inp.checked = true;
-                console.log('sla');
-            }
             printer.appendChild(inp);
             printer.htmlFor = "printer".concat(i);
             printer.className = 'printer';
             print = print.replace(/\n/, '<br>');
             printer.innerHTML += print;
             printers.insertAdjacentElement('afterbegin', printer);
+        });
+        Object.keys(printers.children).forEach(function (n) {
+            console.log(n);
         });
     });
 }

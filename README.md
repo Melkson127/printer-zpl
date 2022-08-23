@@ -2,7 +2,12 @@
 An app for print zpl, epl and others encoded files on linux and unix like system whithout need to use command line, based on lp commands developed with electronjs.
 
 This software is thought for sellers of ecommerce and marketplaces print labels for shippings using linux an alternative for automatization using open soucer software
+# App screen shots
+![screen1](screenshots/screen1.png)
 
+![screen2](screenshots/screen2.png)
+
+![screen3](screenshots/screen3.png)
 # Getting started
 run into your terminal
 
